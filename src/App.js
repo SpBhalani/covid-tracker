@@ -63,7 +63,7 @@ function App() {
     <div className="App">
       <div className="app__left">
         <div className="app__header">
-          <h1>Covid-19 Tracker</h1>
+          <h1>Covid-19 Tracker {country}</h1>
           <FormControl className="app__dropdown">
             <Select variant="outlined" onChange={onclickDropdown} value={country}>
               <MenuItem value="Worldwide">Worldwide</MenuItem>
@@ -75,15 +75,16 @@ function App() {
             </Select>
           </FormControl>
         </div>
+          <h3 className="text">{countryInfo.country}</h3>
         <div className="app__infobox box1">
-          <InfoBox title="Covid-19 Cases" cases={countryInfo.todayCases} total={countryInfo.cases} />
-          <InfoBox title="Recovered" cases={countryInfo.todayRecovered} total={countryInfo.recovered} />
-          <InfoBox title="Dathes" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
+          <InfoBox className="infobox" title="Covid-19 Cases" cases={countryInfo.todayCases} total={countryInfo.cases} />
+          <InfoBox className="infobox" title="Recovered" cases={countryInfo.todayRecovered} total={countryInfo.recovered} />
+          <InfoBox className="infobox" title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
         </div>
         <div className="app__infobox box2">
-          <InfoBox2 title="Total Tests" cases={countryInfo.tests} total={countryInfo.testsPerOneMillion} />
-          <InfoBox2 title="Critical Cases" cases={countryInfo.critical} total={countryInfo.criticalPerOneMillion} />
-          <InfoBox2 title="Total Population" cases={countryInfo.population}  />
+          <InfoBox2 className="infobox" title="Total Tests" cases={countryInfo.tests} total={countryInfo.testsPerOneMillion} />
+          <InfoBox2 className="infobox" title="Critical Cases" cases={countryInfo.critical} total={countryInfo.criticalPerOneMillion} />
+          <InfoBox2 className="infobox" title="Total Population" cases={countryInfo.population}  />
         </div>
 
       </div>
